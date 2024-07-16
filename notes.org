@@ -1,0 +1,42 @@
+* Setup
+** Python installation
+*** Linux
+**** Ubuntu
+     #+begin_src sh
+       sudo add-apt-repository ppa:deadsnakes/ppa -y
+       sudo apt update
+       sudo apt install python3.12 -y
+     #+end_src
+**** Arch Linux
+     #+begin_src sh
+       sudo pacman -Sy python
+     #+end_src
+*** [[https://www.freecodecamp.org/news/python-version-on-mac-update/][Mac OS]]
+*** [[https://www.python.org/downloads/windows/][Windows]]
+** Create virtualenv
+   #+begin_src sh
+     python3 -m venv .llm-venv
+   #+end_src
+** Activate virtualenv
+   #+begin_src sh
+     source .llm-venv/bin/activate
+   #+end_src
+** Install dependencies
+   #+begin_src sh
+     pip install jupyter pandas weaviate-client openai
+   #+end_src
+   *NOTE*: If any code doesn't work with the latest versions then recreate the
+   virtualenv and install using =pip install -r requirements.txt=.
+** Starting jupyter notebook server
+   #+begin_src sh
+     jupyter notebook
+   #+end_src
+   Make sure this server keeps running in the backround so that you can access
+   the web app.
+** Login to =weaviate=
+   https://console.weaviate.cloud/
+** Create a new cluster
+   https://console.weaviate.cloud/create-cluster
+   
+* Download
+  main.ipynb
